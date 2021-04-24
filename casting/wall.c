@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 22:07:01 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/21 14:10:40 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/24 20:08:14 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	dda(t_info *info, t_wall *wall)
 			wall->mapy += wall->stepy;
 			wall->side = 1;
 		}
+		// printf("y: %d x: %d = %d\n",wall->mapy, wall->mapx,info->map[wall->mapy][wall->mapx]);
 		if (info->map[wall->mapy][wall->mapx] == 1)
 			wall->hit = 1;
 	}

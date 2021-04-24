@@ -19,6 +19,7 @@ SRCS =	./libft/ft_memset.c\
 		./read_info/read_info.c\
 		./map/read_map.c \
 	 	./map/check_map.c\
+		./map/util_map.c\
 		./casting/wall.c\
 		./casting/wall2.c\
 		./casting/floor.c\

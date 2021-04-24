@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:08:21 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/24 14:28:44 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/24 20:02:51 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,25 @@ static void	find_direction(char **buf, t_info *info)
 	}
 	if (info->direct == 0)
 		free_exit(info, 2);
+}
+
+static void ready_reversed(char **buf, int *size)
+{
+	int	i;
+	int	biggest;
+
+	biggest = 0;
+	i = -1;
+		while (buf[++i])
+			if (biggest < ft_strlen(buf[i]))
+				biggest = ft_strlen(buf[i]);
+	re_malloc(buf, biggest, size);
+	i = -1;	
+	while (buf[++i] && i < sizeofarray(size))
+	{
+		ft_flip(buf[i]);
+		printf("|%s|\n",buf[i]);
+	}
 }
 
 static char	**put_index_in(char *str, int line)
@@ -96,11 +115,12 @@ int			**read_map(int fd, t_info *info)
 			continue;
 		}
 		info->size[i] = ft_strlen(str);
-		put_index_in(ft_flip(str), i++);
+		put_index_in(str, i++);
 	}
 	info->size[i] = ft_strlen(str);
 	put_index_in(str, i++);
 	info->size[i + 1] = 0;
+	// ready_reversed(put_index_in(0, 8888), info->size);
 	find_direction(put_index_in(0, 8888), info);
 	check_map(put_index_in(0, 8888), info->size, info);
 	map = put_index_in2(map, put_index_in(0, 8888), i, info->size);

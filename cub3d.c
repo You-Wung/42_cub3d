@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 22:15:58 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/24 16:48:20 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/24 19:58:33 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int				main(int argc, char **argv)
 		save_bmp(&info);
 	}
 	else if (argc >= 3)
-		exit(printf("Error\n"));
+		free_exit(&info, 99);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 0, &key_press, &info);
 	mlx_hook(info.win, X_EVENT_KEY_RELEASE, 0, &key_release, &info);
 	mlx_hook(info.win, X_EVENT_KEY_EXIT, 0, &leave, &info);
