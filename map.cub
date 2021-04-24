@@ -7,7 +7,7 @@ WE ./textures/colorstone.xpm
 EA 	./textures/greystone.xpm
 
 
-		F	 0, 0, 50 		
+		F	 0, 0, 30		
    C 			  			255, 100, 0
   
 		
