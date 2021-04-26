@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 19:32:58 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 01:31:09 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:28:54 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ void	draw(t_info *info)
 		x = 0;
 		while (x < info->width)
 		{
-			info->img.data[y * info->width + (info->width - x)] = info->buf[y][x];
+			info->img.data[y * info->width +
+				(info->width - x)] = info->buf[y][x];
 			x++;
 		}
 		y++;
@@ -102,7 +103,8 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 		x = 0;
 		while (x < img->img_width)
 		{
-			texture[img->img_width * y + x] = img->data[img->img_width * y + (img->img_width - x)];
+			texture[img->img_width * y + x] =
+					img->data[img->img_width * y + (img->img_width - x)];
 			x++;
 		}
 		y++;
@@ -116,7 +118,7 @@ void	load_texture(t_info *info)
 
 	load_image(info, info->texture[0], info->north, &img);
 	load_image(info, info->texture[1], info->south, &img);
-	load_image(info, info->texture[2], info->west, &img);
-	load_image(info, info->texture[3], info->east, &img);
+	load_image(info, info->texture[2], info->east, &img);
+	load_image(info, info->texture[3], info->west, &img);
 	load_image(info, info->texture[4], info->s, &img);
 }

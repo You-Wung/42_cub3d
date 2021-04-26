@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 19:31:08 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 01:09:57 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:28:27 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	go_side(t_info *info)
 		if (1 != info->map[(int)(info->posy - info->planey
 								* SS)][(int)(info->posx)])
 			info->posy -= info->planey * SS;
-	}	
+	}
 }
 
 void	key_update(t_info *info)
@@ -104,6 +104,4 @@ void	key_update(t_info *info)
 		key_rot_right(info);
 	if (info->key_left)
 		key_rot_left(info);
-	if (info->key_esc)
-		free_exit(info, 0);
 }

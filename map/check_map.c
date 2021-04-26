@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:31:18 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/24 19:33:43 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:32:34 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@ static int		checking(char **map, int x, int y)
 	const int	dirx[8] = {-1, 0, 1, 0, -1, -1, 1, 1};
 	const int	diry[8] = {0, 1, 0, -1, -1, 1, 1, -1};
 	int			i;
-
-	// printf("x: %d\ty: %d\n",x,y);
-	//     for (int i=0; i<20; i++)
-    // {
-    //     for (int y=0; y<40; y++)
-    //         printf("%c",map[i][y]);
-    //     printf("\n");
-    // }
 
 	if (map[y][x] == '1' || map[y][x] == 'x')
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 18:32:16 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 01:12:27 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:32:22 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ typedef struct		s_map
 	int				previous[2];
 }					t_map;
 
-int			sizeofarray(int *i);
+int					sizeofarray(int *i);
 #endif

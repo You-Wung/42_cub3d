@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:02:20 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 01:17:18 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:31:27 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ int		check_index(t_info *info, int r, int g, int b)
 	if (r > 0xFF || g > 0xFF || b > 0xFF
 		|| r < 0 || g < 0 || b < 0)
 		free_exit(info, 10);
+	if (info->sign == 'F')
+		info->floor = (r << 16) | (g << 8) | b;
+	else if (info->sign == 'C')
+		info->ceilling = (r << 16) | (g << 8) | b;
 	return (1);
 }
 
@@ -47,11 +51,11 @@ void	free_exit(t_info *info, int i)
 		free(info->east);
 	if (info->zbuffer != NULL)
 		free(info->zbuffer);
-	if (info->map[0] != NULL)
+	if (info->map != NULL)
 		two_free(info->map);
-	if (info->buf[0] != NULL)
+	if (info->buf != NULL)
 		two_free(info->buf);
-	if (info->texture[0] != NULL)
+	if (info->texture != NULL)
 		two_free(info->texture);
 	if (i > 0)
 		exit(printf("Error%d\n", i));

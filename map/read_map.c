@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:08:21 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 01:08:01 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:33:36 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,6 @@ static void	find_direction(char **buf, t_info *info)
 	if (info->direct == 0)
 		free_exit(info, 2);
 }
-
-//static void ready_reversed(char **buf, int *size)
-//{
-//	int	i;
-//	int	biggest;
-
-//	biggest = 0;
-//	i = -1;
-//		while (buf[++i])
-//			if (biggest < ft_strlen(buf[i]))
-//				biggest = ft_strlen(buf[i]);
-//	re_malloc(buf, biggest, size);
-//	i = -1;	
-//	while (buf[++i] && i < sizeofarray(size))
-//	{
-//		ft_flip(buf[i]);
-//		printf("|%s|\n",buf[i]);
-//	}
-//}
 
 static char	**put_index_in(char *str, int line)
 {
@@ -109,7 +90,8 @@ int			**read_map(int fd, t_info *info)
 	while (get_next_line(fd, &str))
 	{
 		j = 0;
-		if (!(ft_strchr(str, '0')) && !(ft_strchr(str, '1')) && info->size[0] == 0)
+		if (!(ft_strchr(str, '0')) && !(ft_strchr(str, '1'))
+											&& info->size[0] == 0)
 		{
 			free(str);
 			continue;

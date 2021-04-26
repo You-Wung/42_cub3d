@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 22:22:52 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 01:09:15 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:24:32 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ typedef struct		s_sprite
 
 int					sort_gnl(char **str, t_info *info);
 int					**read_map(int fd, t_info *info);
-void				skip_empty_char(char **str, int sign);
+void				skip_empty_char(char **str, int sign, t_info *info);
 int					check_index(t_info *info, int r, int g, int b);
 int					leave(int key, t_info *info);
 int					key_press(int key, t_info *info);

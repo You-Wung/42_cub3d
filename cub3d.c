@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 22:15:58 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/24 19:58:33 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:24:49 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int		set_gnl(t_info *info, char *argv)
 	{
 		fre = str;
 		info->sign = 0;
-		skip_empty_char(&str, 0);
+		skip_empty_char(&str, 0, info);
 		if (!(sort_gnl(&str, info)))
 			break ;
 		free(fre);
