@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 22:15:58 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 14:48:25 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 17:27:14 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ static int		set_gnl(t_info *info, char *argv)
 			break ;
 		free(fre);
 	}
+	free(fre);
 	check_screensize(info);
 	return (fd);
 }
 
 static void		calc(t_info *info)
 {
-	info->zbuffer = malloc(sizeof(double) * info->width);
 	floor_ceilling(info);
 	wall(info);
 	sprite(info);
@@ -72,9 +72,10 @@ int				main(int argc, char **argv)
 	ft_memset(&info, 0, sizeof(t_info));
 	info.mlx = mlx_init();
 	fd = set_gnl(&info, argv[1]);
+	info.zbuffer = malloc(sizeof(double) * info.width);
 	info.map = read_map(fd, &info);
 	set_up(&info);
-	info.win = mlx_new_window(info.mlx, info.width, info.height, "cub3d");
+	info.win = mlx_new_window(info.mlx, info.width, info.height, "cub3D");
 	info.img.img = mlx_new_image(info.mlx, info.width, info.height);
 	info.img.data = (int *)mlx_get_data_addr(info.img.img,
 							&info.img.bpp, &info.img.size_l, &info.img.endian);

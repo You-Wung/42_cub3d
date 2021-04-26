@@ -6,12 +6,22 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:08:21 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 14:49:37 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 16:50:21 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 #include "map.h"
+
+static void buf_free(char **buf)
+{
+	int		i;
+
+	i = -1;
+	while (++i < 256)
+		if(buf[i] != NULL)
+			free(buf[i]);
+}
 
 static void	find_direction(char **buf, t_info *info)
 {
@@ -70,10 +80,10 @@ static int	**put_index_in2(char **buf, int line, int *size)
 		{
 			if (buf[i][j] == ' ')
 				map[i][j] = 0;
-			map[i][j] = buf[i][j] - '0';
+			else
+				map[i][j] = buf[i][j] - '0';
 			j++;
 		}
-		free(buf[i]);
 		i++;
 	}
 	map[line] = NULL;
@@ -85,26 +95,21 @@ int			**read_map(int fd, t_info *info)
 	int		**map;
 	char	*str;
 	int		i;
-	int		j;
 
 	i = 0;
 	while (get_next_line(fd, &str))
 	{
-		j = 0;
-		if (!(ft_strchr(str, '0')) && !(ft_strchr(str, '1'))
-											&& info->size[0] == 0)
+		if (!(ft_strchr(str, '0')) && !(ft_strchr(str, '1')))
 		{
 			free(str);
-			continue;
+			continue ;
 		}
 		info->size[i] = ft_strlen(str);
 		put_index_in(str, i++);
 	}
-	info->size[i] = ft_strlen(str);
-	put_index_in(str, i++);
-	info->size[i + 1] = 0;
 	find_direction(put_index_in(0, 8888), info);
 	check_map(put_index_in(0, 8888), info);
 	map = put_index_in2(put_index_in(0, 8888), i, info->size);
+	buf_free(put_index_in(0, 8888));
 	return (map);
 }

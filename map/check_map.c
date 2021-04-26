@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:31:18 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 14:48:51 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 17:24:58 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char		**init_map(char **map)
 	y = -1;
 	while (++y < 255)
 	{
-		test[y] = malloc(256);
+		test[y] = malloc(sizeof(char) * 256);
 		test[y][255] = 0;
 		x = -1;
 		while (++x < 255)

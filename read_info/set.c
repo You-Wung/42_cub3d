@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 19:32:58 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 14:28:54 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 15:43:28 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,10 +115,10 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 void	load_texture(t_info *info)
 {
 	t_img	img;
-
-	load_image(info, info->texture[0], info->north, &img);
-	load_image(info, info->texture[1], info->south, &img);
-	load_image(info, info->texture[2], info->east, &img);
-	load_image(info, info->texture[3], info->west, &img);
-	load_image(info, info->texture[4], info->s, &img);
+	img.bpp = 1;
+	load_image(info, info->texture[0], info->north, &info->img);
+	load_image(info, info->texture[1], info->south, &info->img);
+	load_image(info, info->texture[2], info->east, &info->img);
+	load_image(info, info->texture[3], info->west, &info->img);
+	load_image(info, info->texture[4], info->s, &info->img);
 }
