@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 22:07:01 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/25 00:25:53 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:47:37 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	sidedist(t_info *info, t_wall *wall)
 	}
 }
 
-void	texture_number(t_info *info, t_wall *wall)
+void	texture_number(t_wall *wall)
 {
 	if (wall->side == 0)
 	{
@@ -85,14 +85,13 @@ void	dda(t_info *info, t_wall *wall)
 		if (info->map[wall->mapy][wall->mapx] == 1)
 			wall->hit = 1;
 	}
-	texture_number(info, wall);
+	texture_number(wall);
 }
 
 void	wall(t_info *info)
 {
-	int		x;
-	int		y;
-	t_wall	wall;
+	int				x;
+	t_wall			wall;
 
 	x = 0;
 	while (x < info->width)

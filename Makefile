@@ -34,7 +34,7 @@ SRCS =	./libft/ft_memset.c\
 
 $(NAME) :
 	make all -C libft/
-	$(CC) -o $(NAME) $(MLXFLAG) $(MLXFILE) $(SRCS)
+	$(CC) $(CFLAGS) -o $(NAME) $(MLXFLAG) $(MLXFILE) $(SRCS)
 
 all : $(NAME)
 

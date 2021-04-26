@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 22:22:52 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 14:24:32 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:49:44 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ typedef struct		s_info
 	char			*south;
 	char			*west;
 	char			*east;
-	unsigned int	floor;
-	unsigned int	ceilling;
-	unsigned int	width;
-	unsigned int	height;
+	int				floor;
+	int				ceilling;
+	int				width;
+	int				height;
 	int				**map;
 	int				size[256];
 	double			sprite[256][2];
@@ -133,7 +133,7 @@ int					sort_gnl(char **str, t_info *info);
 int					**read_map(int fd, t_info *info);
 void				skip_empty_char(char **str, int sign, t_info *info);
 int					check_index(t_info *info, int r, int g, int b);
-int					leave(int key, t_info *info);
+int					leave(t_info *info);
 int					key_press(int key, t_info *info);
 int					key_release(int key, t_info *info);
 void				key_update(t_info *info);
@@ -144,7 +144,7 @@ void				load_image(t_info *info, int *texture, char *path,
 																t_img *img);
 void				load_texture(t_info *info);
 void				perp(t_info *info, t_wall *wall);
-int					check_map(char **map, int *size, t_info *info);
+int					check_map(char **map, t_info *info);
 void				floor_ceilling(t_info *info);
 void				wall(t_info *info);
 void				draw1(t_info *info, t_wall *wall);

@@ -6,13 +6,13 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 19:31:08 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 14:28:27 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:49:25 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int		leave(int key, t_info *info)
+int		leave(t_info *info)
 {
 	free_exit(info, 1);
 	return (0);

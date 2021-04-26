@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:08:21 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 14:33:36 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:49:37 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,9 @@ static char	**put_index_in(char *str, int line)
 	return (buf);
 }
 
-static int	**put_index_in2(int **map, char **buf, int line, int *size)
+static int	**put_index_in2(char **buf, int line, int *size)
 {
+	int **map;
 	int i;
 	int j;
 
@@ -103,7 +104,7 @@ int			**read_map(int fd, t_info *info)
 	put_index_in(str, i++);
 	info->size[i + 1] = 0;
 	find_direction(put_index_in(0, 8888), info);
-	check_map(put_index_in(0, 8888), info->size, info);
-	map = put_index_in2(map, put_index_in(0, 8888), i, info->size);
+	check_map(put_index_in(0, 8888), info);
+	map = put_index_in2(put_index_in(0, 8888), i, info->size);
 	return (map);
 }

@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:31:18 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 14:32:34 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 14:48:51 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int		checking(char **map, int x, int y)
 	return (1);
 }
 
-static char		**init_map(char **map, int *size)
+static char		**init_map(char **map)
 {
 	int		x;
 	int		y;
@@ -68,13 +68,13 @@ static char		**init_map(char **map, int *size)
 	return (test);
 }
 
-int				check_map(char **map, int *size, t_info *info)
+int				check_map(char **map, t_info *info)
 {
 	int		x;
 	int		y;
 	char	**test_map;
 
-	test_map = init_map(map, size);
+	test_map = init_map(map);
 	y = -1;
 	while (test_map[++y])
 	{
