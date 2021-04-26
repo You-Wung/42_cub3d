@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 19:32:58 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/21 17:32:38 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 01:31:09 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	draw(t_info *info)
 		x = 0;
 		while (x < info->width)
 		{
-			info->img.data[y * info->width + x] = info->buf[y][x];
+			info->img.data[y * info->width + (info->width - x)] = info->buf[y][x];
 			x++;
 		}
 		y++;
@@ -102,7 +102,7 @@ void	load_image(t_info *info, int *texture, char *path, t_img *img)
 		x = 0;
 		while (x < img->img_width)
 		{
-			texture[img->img_width * y + x] = img->data[img->img_width * y + x];
+			texture[img->img_width * y + x] = img->data[img->img_width * y + (img->img_width - x)];
 			x++;
 		}
 		y++;

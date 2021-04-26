@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 18:32:16 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/24 19:51:52 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 01:12:27 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ typedef struct		s_map
 	int				previous[2];
 }					t_map;
 
-void        re_malloc(char **buf, int size, int *line_size);
 int			sizeofarray(int *i);
 #endif

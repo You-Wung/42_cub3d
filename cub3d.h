@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 22:22:52 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/24 13:43:43 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 01:09:15 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
+# define KEY_RIGHT 124
+# define KEY_LEFT 123
 # define K_ESC 53
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define MS 0.03
+# define SS 0.05
 # define RS 0.03
 # include "mlx2/mlx.h"
 # include "mlx/mlx.h"
@@ -73,6 +76,8 @@ typedef struct		s_info
 	int				key_w;
 	int				key_s;
 	int				key_d;
+	int				key_right;
+	int				key_left;
 	int				key_esc;
 	t_img			img;
 	int				**buf;
@@ -148,6 +153,6 @@ void				sprite(t_info *info);
 void				sprite2(t_info *info, t_sprite *sp);
 void				save_bmp(t_info *info);
 void				free_exit(t_info *info, int i);
-void				key_rot_d(t_info *info);
-void				key_rot_a(t_info *info);
+void				key_rot_right(t_info *info);
+void				key_rot_left(t_info *info);
 #endif

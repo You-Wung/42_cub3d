@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-MLXFLAG = -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLXFLAG = -L mlx -lmlx -framework OpenGL -framework AppKit
 
 MLXFILE = libmlx.dylib
 

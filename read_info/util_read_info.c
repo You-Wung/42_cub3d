@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:02:20 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/21 16:10:27 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 01:17:18 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ void	free_exit(t_info *info, int i)
 		free(info->east);
 	if (info->zbuffer != NULL)
 		free(info->zbuffer);
-	if (info->map != NULL)
+	if (info->map[0] != NULL)
 		two_free(info->map);
-	if (info->buf != NULL)
+	if (info->buf[0] != NULL)
 		two_free(info->buf);
-	if (info->texture != NULL)
+	if (info->texture[0] != NULL)
 		two_free(info->texture);
 	if (i > 0)
 		exit(printf("Error%d\n", i));

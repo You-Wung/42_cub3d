@@ -6,18 +6,18 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 19:31:08 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/21 14:08:38 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 01:11:17 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void	key_rot_d(t_info *info)
+void	key_rot_left(t_info *info)
 {
 	double olddirx;
 	double oldplanex;
 
-	if (info->key_d)
+	if (info->key_left)
 	{
 		olddirx = info->dirx;
 		info->dirx = info->dirx * cos(-RS)
@@ -31,12 +31,12 @@ void	key_rot_d(t_info *info)
 	}
 }
 
-void	key_rot_a(t_info *info)
+void	key_rot_right(t_info *info)
 {
 	double olddirx;
 	double oldplanex;
 
-	if (info->key_a)
+	if (info->key_right)
 	{
 		olddirx = info->dirx;
 		info->dirx = info->dirx * cos(RS) - info->diry * sin(RS);
