@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:08:21 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 16:50:21 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/26 17:34:07 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ int			**read_map(int fd, t_info *info)
 		info->size[i] = ft_strlen(str);
 		put_index_in(str, i++);
 	}
+	free(str);
 	find_direction(put_index_in(0, 8888), info);
 	check_map(put_index_in(0, 8888), info);
 	map = put_index_in2(put_index_in(0, 8888), i, info->size);
