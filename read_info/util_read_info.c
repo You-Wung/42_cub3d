@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:02:20 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 17:30:11 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/28 15:23:14 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	two_free(int **a)
 }
 
 void	free_exit(t_info *info, int i)
-{		
+{
 	if (info->s != NULL)
 		free(info->s);
 	if (info->north != NULL)

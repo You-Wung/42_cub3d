@@ -6,20 +6,20 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:08:21 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/28 15:16:20 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/28 15:23:44 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 #include "map.h"
 
-static void buf_free(char **buf)
+static void	buf_free(char **buf)
 {
 	int		i;
 
 	i = -1;
 	while (++i < 256)
-		if(buf[i] != NULL)
+		if (buf[i] != NULL)
 			free(buf[i]);
 }
 
@@ -99,7 +99,8 @@ int			**read_map(int fd, t_info *info)
 	i = 0;
 	while (get_next_line(fd, &str))
 	{
-		if (!(ft_strchr(str, '0')) && !(ft_strchr(str, '1')) && info->size[0] == 0)
+		if (!(ft_strchr(str, '0')) && !(ft_strchr(str, '1')) &&
+									info->size[0] == 0)
 		{
 			free(str);
 			continue ;
