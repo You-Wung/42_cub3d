@@ -6,7 +6,7 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:08:21 by tyou              #+#    #+#             */
-/*   Updated: 2021/04/26 17:34:07 by tyou             ###   ########.fr       */
+/*   Updated: 2021/04/28 15:16:20 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int			**read_map(int fd, t_info *info)
 	i = 0;
 	while (get_next_line(fd, &str))
 	{
-		if (!(ft_strchr(str, '0')) && !(ft_strchr(str, '1')))
+		if (!(ft_strchr(str, '0')) && !(ft_strchr(str, '1')) && info->size[0] == 0)
 		{
 			free(str);
 			continue ;
